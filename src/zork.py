@@ -45,6 +45,7 @@ def four(second):
         elif second.lower() == ("open door"):
                 print("---------------------------------------------------------")
                 print("The door cannot be opened.")
+                return 4
         elif second.lower() == ("take boards"):
                 print("---------------------------------------------------------")
                 print("The boards are securely fastened.")
@@ -78,7 +79,7 @@ def one(north_house_inp):
                 return 1
         else:
                 print("---------------------------------------------------------")
-                return 4
+                return 1
 
 def eight(forest_inp):
 

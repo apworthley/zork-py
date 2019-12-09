@@ -26,7 +26,6 @@ def main():
                 loop=zork.ten(choice)
             elif loop == 11:
                 loop=zork.eleven(choice)
-                print( loop)
                 if loop == 1101:
                     alive = 2
 
