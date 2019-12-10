@@ -1,33 +1,65 @@
 # Main game file
 
 import zork
+def intro(num):
+        if num == 4:
+                print("---------------------------------------------------------")
+                print("You are standing in an open field west of a white house, with a boarded front door.")
+                print("You can see a small lake to the north.")
+                print("(A secret path leads southwest into the forest.)")
+                print("There is a Small Mailbox.")
+        elif num == 1:
+                print("---------------------------------------------------------")
+                print("You find yourself at the edge of a beautiful lake aside rolling hills.")
+                print("A small pier juts out into the lake.")
+                print("A fishing rod rests on the pier.")
+                print("(You can see a white house in the distance to the south.)")
+        elif num == 8:
+                print("---------------------------------------------------------")
+                print("This is a forest, with trees in all directions. To the east, there appears to be sunlight.")
+        elif num == 9:
+                print("---------------------------------------------------------")
+                print("You are in a clearing, with a forest surrounding you on all sides. A path leads south.")
+                print("There is an open grating, descending into darkness.")
+        elif num == 10:
+                print("---------------------------------------------------------")
+                print("You are in a tiny cave with a dark, forbidding staircase leading down.")
+                print("There is a skeleton of a human male in one corner.")
+        elif num == 11:
+                print("---------------------------------------------------------")
+                print("You have entered a mud-floored room.")
+                print("Lying half buried in the mud is an old trunk, bulging with jewels.")  
 def main():
-        alive=1
         print("---------------------------------------------------------")
         print("Welcome to Zork - The Unofficial Python Version.")
-        loop = 4
-        while alive == 1:
-            zork.intro(loop)
+        print("\nStatus Alive")
+        loop = [4,1]
+        while loop[1] == 1:
+            intro(loop[0])
             choice = input("What do you do?\n")
+            
             if choice.lower() == ("kick the bucket"):
                 print("---------------------------------------------------------")
-                print("You die.")
+                print("Status: Dead")
                 print("---------------------------------------------------------")
-                alive=2
-            elif loop == 4:
-                loop=zork.four(choice)
-            elif loop == 1:
-                loop=zork.one(choice)
-            elif loop == 8:
-                loop=zork.eight(choice)
-            elif loop == 9:
-                loop=zork.nine(choice)
-            elif loop == 10:
-                loop=zork.ten(choice)
-            elif loop == 11:
-                loop=zork.eleven(choice)
-                if loop == 1101:
-                    alive = 2
+                loop=[0,2]
+            elif loop[1]==1:
+                print("\n---------------------------------------------------------")
+                print ("Status: Alive")
+            if loop[0] == 4:
+                loop=zork.starting_spot(choice)
+            elif loop[0] == 1:
+                loop=zork.the_lake(choice)
+            elif loop[0] == 8:
+                loop=zork.the_forest(choice)
+            elif loop[0] == 9:
+                loop=zork.the_grate(choice)
+            elif loop[0] == 10:
+                loop=zork.the_cave(choice)
+            elif loop[0] == 11:
+                loop=zork.the_end(choice)
+                if loop[0] == 1101:
+                    loop[1] = 2
 
         dead_inp = input("Do you want to play again? Y/N ")
         if dead_inp.lower() == ("n"):
