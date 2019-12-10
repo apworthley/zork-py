@@ -4,7 +4,7 @@ import zork
 def intro(num):
         if num == 4:
                 print("---------------------------------------------------------")
-                print("You are standing in an open field west of a white house, with a boarded front door.")
+                print("You are standing in an open field west of a white house.")
                 print("You can see a small lake to the north.")
                 print("(A secret path leads southwest into the forest.)")
                 print("There is a Small Mailbox.")
@@ -28,7 +28,21 @@ def intro(num):
         elif num == 11:
                 print("---------------------------------------------------------")
                 print("You have entered a mud-floored room.")
-                print("Lying half buried in the mud is an old trunk, bulging with jewels.")  
+                print("Lying half buried in the mud is an old trunk, bulging with jewels.")
+        elif num == 3:
+                print("---------------------------------------------------------")
+                print("You are behind the massive house. There seems to be a gap big enough to fit through to the west.")
+                print("There might be a door though if you walk around to the south")
+        elif num == 2:
+                print("---------------------------------------------------------")
+                print("You find yourself in a dimly lit kitchen with dust covering the floor.")
+                print("A lantern rests on the kitchen island.")
+                print("A set of stairs leads up to another room.")
+        elif num == 5:
+                print("---------------------------------------------------------")
+                print("You find yourself in a dimly lit attic with dust covering the floor.")
+                print("There is a magical portal in the far back corner")
+                print("A set of stairs leads back to the kitchen")
 def main():
         print("---------------------------------------------------------")
         print("Welcome to Zork - The Unofficial Python Version.")
@@ -56,6 +70,12 @@ def main():
                 loop=zork.the_grate(choice)
             elif loop[0] == 10:
                 loop=zork.the_cave(choice)
+            elif loop[0] == 3:
+                loop=zork.back_of_house(choice)
+            elif loop[0] == 5:
+                loop=zork.attic(choice)
+            elif loop[0] == 2:
+                loop=zork.kitchen(choice)
             elif loop[0] == 11:
                 loop=zork.the_end(choice)
                 if loop[0] == 1101:
@@ -70,8 +90,6 @@ def main():
 
 main()
 
-def PrintOutput(s):
-        print("OUTPUT", s)
 
 
 

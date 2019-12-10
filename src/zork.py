@@ -15,14 +15,8 @@ def starting_spot(second):
                 return [4,1]
         elif second.lower() == ("go north"):
                 return [1,1]
-        elif second.lower() == ("open door"):
-                print("---------------------------------------------------------")
-                print("The door cannot be opened.")
-                return [4,1]
-        elif second.lower() == ("take boards"):
-                print("---------------------------------------------------------")
-                print("The boards are securely fastened.")
-                return [4,1]
+        elif second.lower() == ("go east"):
+                return [3,1]
         elif second.lower() == ("look at house"):
                 print("---------------------------------------------------------")
                 print("The house is a beautiful colonial house which is painted white. It is clear that the owners must have been extremely wealthy.")
@@ -118,8 +112,40 @@ def the_cave(cave_inp):
         else:
                 print("---------------------------------------------------------")
                 return [10,1]
-
-
+def back_of_house(room):
+        if room.lower() == ("go west"):
+                return[2,1]
+        elif room.lower() == ("go south"):
+                print("---------------------------------------------------------")
+                print("There was a high fence that you were unable to climb")
+                return[3,1]
+        elif room.lower() == ("go back"):
+                return[4,1]
+        else:
+                print("---------------------------------------------------------")
+                return [3,1]
+def kitchen(options):
+        if options.lower() == ("go up stairs"):
+                return [5,1]
+        elif options.lower() == ("pick up lantern"):
+                print("The lamp is super glued to the table.")
+                return [2,1]
+        elif options.lower() == ("look for food"):
+                print("there is no food, sorry!")
+                return [2,1]
+        elif options.lower6() == ("go back outside"):
+                return [3,1]
+        else:
+                print("---------------------------------------------------------")
+                return [2,1]
+def attic(portal):
+        if portal.lower() == "go in portal":
+                return [8,1]
+        elif portal.lower() == "go back down":
+                return[2,1]
+        else:
+                print("---------------------------------------------------------")
+                return [5,1]
 		# End of game
 def the_end(last_inp):
 			
