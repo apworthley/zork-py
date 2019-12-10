@@ -40,7 +40,7 @@ def intro(num):
                 print("A set of stairs leads up to another room.")
         elif num == 5:
                 print("---------------------------------------------------------")
-                print("You find yourself in a dimly lit attic with dust covering the floor.")
+                print("You find yourself in a dimly lit attic with a bucket.")
                 print("There is a magical portal in the far back corner")
                 print("A set of stairs leads back to the kitchen")
 def main():

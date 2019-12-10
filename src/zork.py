@@ -133,7 +133,7 @@ def kitchen(options):
         elif options.lower() == ("look for food"):
                 print("there is no food, sorry!")
                 return [2,1]
-        elif options.lower6() == ("go back outside"):
+        elif options.lower() == ("go back outside"):
                 return [3,1]
         else:
                 print("---------------------------------------------------------")
